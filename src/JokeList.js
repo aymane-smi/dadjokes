@@ -25,7 +25,7 @@ export default class JokeList extends Component{
             const headers = {Accept: 'application/json'};
             let tmp_joke = []
             while(tmp_joke.length < this.props.numJokesToGet){
-                let response = await axios.get("https://icanhazdadjoke.coms/", {headers: headers});
+                let response = await axios.get("https://icanhazdadjoke.com/", {headers: headers});
                 let newJoke = {joke: response.data.joke, vote: 0, id: uuid()}
                 if(!this.setJokes.has(newJoke.joke)){
                     tmp_joke.push(newJoke);
